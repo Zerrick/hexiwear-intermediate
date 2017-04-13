@@ -110,7 +110,7 @@ var Hexiwear = function () {
             	.then(data => {
                  	self.motionData.x = data.getInt16(0, true) / 100;
                    	self.motionData.y = data.getInt16(2, true) / 100;
-                  	self.motionData.z = data.getInt16(4, true) / 100;
+                  	self.motionData.z = -(data.getInt16(4, true) / 100);
                    	self.updateUI();
             	})
            		.catch(error => {
